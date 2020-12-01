@@ -3,13 +3,11 @@ cc_library_shared {
     srcs: [
         "ActivityManager.cpp",
         "DeathNotifier.cpp",
-        "HDCP.cpp",
         "MediaPlayerFactory.cpp",
         "MediaPlayerService.cpp",
         "MediaRecorderClient.cpp",
         "MetadataRetrieverClient.cpp",
         "StagefrightMetadataRetriever.cpp",
-        "RemoteDisplay.cpp",
         "StagefrightRecorder.cpp",
         "TestPlayerStub.cpp",
     ],
@@ -40,7 +38,6 @@ cc_library_shared {
         "libnetd_client",
         "libpowermanager",
         "libstagefright",
-        "libstagefright_wfd",
         "libstagefright_foundation",
         "libstagefright_httplive",
         "libutils",
@@ -74,6 +71,8 @@ cc_library_shared {
     ],
 
     name: "libmediaplayerservice",
+
+    defaults: ["aosp_wfd_mediaservice_defaults"],
 
     sanitize: {
         cfi: true,
